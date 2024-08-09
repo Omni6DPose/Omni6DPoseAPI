@@ -30,13 +30,57 @@ We introduce **<span style="color: #9AEA27;">Omni6DPose</span>**, a substantial 
 - [ ] Release a convenient version of GenPose++ with SAM for the downstream tasks.
 
 
-## 🗂️ Download the Omni6DPose Dataset
+## 🗂️ Omni6DPose Dataset
+
+### Dataset Overview
 The Omni6DPose dataset is available for download at [Omni6DPose](https://www.dropbox.com/scl/fo/ixmai3d7uf4mzp3le8sz3/ALRxBZUhhaAs11xH56rJXnM?rlkey=sn7kyuart2i8ujeu1vygz4wcy&st=8yy78r6z&dl=0). The dataset is organized into four parts:
-- **Meta:** the meta information of the dataset.
 - **ROPE:** the real dataset for evaluation.
 - **SOPE:** the simulated dataset for training.
 - **PAM:** the pose aligned 3D models used in both ROPE and SOPE.
+- **Meta:** the meta information of the objects in PAM.
 
+### Dataset Structure
+Omni6DPose provides a large-scale dataset with comprehensive data modalities and accurate annotations. The dataset is organized as follows. The files marked as [Optional] may not be necessary for some methods or tasks, but they are included to support a wide range of research possibilities. The detailed file descriptions can be found in the [project website](https://jiyao06.github.io/Omni6DPose/download).
+```
+Omni6DPose
+├── ROPE
+│   ├── SCENE_ID
+│   │   ├── FRAME_ID_meta.json
+│   │   ├── FRAME_ID_color.png
+│   │   ├── FRAME_ID_mask.exr
+│   │   ├── FRAME_ID_depth.exr
+│   │   ├── FRAME_ID_mask_sam.npz [Optional]
+│   │   └── ...
+│   └── ...
+├── SOPE
+│   ├── PATCH_ID
+│   │   ├── train
+│   │   │   ├── SCENE_NAME
+│   │   │   |  ├── SCENE_ID
+│   |   |   |  |   ├── FRAME_ID_meta.json
+│   │   │   |  |   ├── FRAME_ID_color.png
+│   │   │   |  |   ├── FRAME_ID_mask.exr
+│   |   |   |  |   ├── FRAME_ID_depth.exr
+│   │   │   |  |   ├── FRAME_ID_depth_1.exr [Optional]
+│   │   │   |  |   ├── FRAME_ID_coord.png   [Optional]
+│   │   │   |  |   ├── FRAME_ID_ir_l.png    [Optional]
+│   │   │   |  |   ├── FRAME_ID_ir_r.png    [Optional]
+│   │   │   |  |   └── ...
+│   │   │   |  └── ...
+│   │   │   └── ...
+│   │   └── test
+│   └── ...
+├── PAM
+│   └── obj_meshes
+│       ├── DATASET-CLASS_ID
+│       └── ...
+└── Meta    
+    ├── obj_meta.json 
+    └── real_obj_meta.json
+```
+
+
+### Download
 Due to the large size of the dataset and the varying requirements of different tasks and methods, we have divided the dataset into multiple parts, each compressed separately. This allows users to download only the necessary parts of the dataset according to their needs. Please follow the instructions within the [download.ipynb](download.ipynb) to download and decompress the necessary dataset parts.
 
 **Note:** The meta file `Meta/obj_meta.json` is corresponding to the `SOPE` dataset, and the meta file `Meta/real_obj_meta.json` is corresponding to the `ROPE` dataset. When you using the dataset and the fllowing API, please make sure to use the correct meta file.
