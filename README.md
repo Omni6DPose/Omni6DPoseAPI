@@ -19,14 +19,15 @@ We introduce **<span style="color: #9AEA27;">Omni6DPose</span>**, a substantial 
 
 
 ## ✨ News
-* **2024.08.01**: The **<span style="color: #9AEA27;">Omni6DPose</span>** dataset and API are released! 🎉
+* **2024.08.10**: **<span style="color: #9AEA27;">[GenPose++](https://github.com/Omni6DPose/GenPose2)</span>** is released! 🎉
+* **2024.08.01**: **<span style="color: #9AEA27;">Omni6DPose</span>** dataset and API are released! 🎉
 * **2024.07.01**: **<span style="color: #9AEA27;">Omni6DPose</span>** has been accepted by ECCV2024! 🎉
 
 
 ## 📆 TODO
 - [x] Release the Omni6DPose dataset. 
 - [x] Release the Omni6DPose API.
-- [ ] Release the GenPose++ and pretrained models.
+- [x] Release the GenPose++ and pretrained models.
 - [ ] Release a convenient version of GenPose++ with SAM for the downstream tasks.
 
 
@@ -111,7 +112,7 @@ Please refer to the [documentation](https://jiyao06.github.io/Omni6DPose/cutoop/
 
 
 ## 🎯 Baseline
-GenPose++ comming soon!
+We provide the official pytorch implementation of GenPose++ [here](https://github.com/Omni6DPose/GenPose2).
 
 ## 📮 Contact
 If you have any questions, please feel free to contact us:
